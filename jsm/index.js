@@ -2,6 +2,7 @@
 const THREE = await import("/jsm/three.module.js")
 const { OrbitControls } = await import("/jsm/OrbitControls.js")
 const { GLTFLoader } = await import("/jsm/GLTFLoader.js")
+const ImageMetrics = await import("/jsm/ImageMetrics.js")
 // May need to be transpiled for older browsers
 
 // SET UP RENDERER
@@ -65,13 +66,7 @@ let horizontalResolution = verticalResolution*2;
 
 // USER SELECT AND LOAD IMAGE FOR COMPARISON
 
-var newImage = document.getElementById("canvas2d");
-var imageContext=newImage.getContext("2d");
-newImage.src = "/testdata/sampleImageOrth2.png";
-newImage.style.width = "200px";
-newImage.style.height = "200px";
-newImage.style.position = 'absolute';
-newImage.style.right = '0px';
+const imageMetrics = new ImageMetrics("/testdata/sampleImageOrth2.png", "canvas2d");
 
 
 //newImage.style.top = '2px';
